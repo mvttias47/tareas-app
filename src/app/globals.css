@@ -1,26 +1,180 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg1: #0b1020;
+  --bg2: #152043;
+  --glass: rgba(255, 255, 255, .08);
+  --border: rgba(255, 255, 255, .18);
+  --txt: #eef2ff;
+  --muted: #a5b4fc;
+  --primary: #7c3aed;
+  --accent: #06b6d4;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--txt);
+  background:
+    radial-gradient(1000px 600px at 10% -10%, #1b1f3c 0%, transparent 60%),
+    radial-gradient(1000px 600px at 90% 10%, #0c2441 0%, transparent 60%),
+    linear-gradient(120deg, var(--bg1), var(--bg2));
+}
+
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  margin: 6px 12px 0 0;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04) inset;
+}
+.dot--ok { background: linear-gradient(135deg, #3DE2A1, #00d28f); }
+.dot--pending { background: linear-gradient(135deg, #00b4ff, #6c6cff); }
+
+
+.badge {
+  align-self: center;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  letter-spacing: .3px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, .06);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, .15) inset,
+    0 0 0 1px rgba(255, 255, 255, .02);
+}
+.badge--ok {
+  color: #0f3;
+  background: linear-gradient(180deg, rgba(22, 255, 166, .15), rgba(22, 255, 166, .06));
+}
+.badge--pending {
+  color: #7aa7ff;
+  background: linear-gradient(180deg, rgba(124, 159, 255, .16), rgba(124, 159, 255, .07));
+}
+
+
+.panel-resumen {
+  margin: 8px 2px 2px 2px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, .06);
+  background: rgba(255, 255, 255, .03);
+  color: #9fb8ff;
+}
+.pill--info strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+
+.wrapper {
+  max-width: 880px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, .35),
+    inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+.header { padding: 24px 26px 12px; }
+.h1 { font-size: 34px; font-weight: 800; margin: 0; }
+.sub { color: var(--muted); margin-top: 6px; }
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 16px 26px 22px;
+}
+.label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, .06);
+  color: var(--txt);
+  outline: none;
+}
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  box-shadow: 0 6px 18px rgba(124, 58, 237, .35);
+  transition: transform .15s ease, filter .2s ease;
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+
+.section { padding: 0 26px 26px; }
+.card {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, .05);
+  border-radius: 14px;
+  padding: 14px;
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.row { display: flex; gap: 12px; align-items: flex-start; }
+.title { font-weight: 700; }
+.meta { opacity: .75; }
+
+
+.banner {
+  border-left: 4px solid #ef4444;
+  background: rgba(239, 68, 68, .12);
+  color: #fecaca;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 0 26px 10px;
+}
+
+
+.skel {
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, .05),
+    rgba(255, 255, 255, .12),
+    rgba(255, 255, 255, .05)
+  );
+  animation: shine 1.1s linear infinite;
+  background-size: 200% 100%;
+}
+@keyframes shine {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
 }
