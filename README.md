@@ -76,7 +76,11 @@ npm i
 npm run test
 ``` 
 ## Decisiones técnicas
-1. 
+1. Se implementó Vitest + React Testing Library por su compatibilidad con Vite y debido a tiempos de ejecución mucho más rápidos.
+2. Se aplicó TailwindCSS para el diseño visual de la interfaz con componentes reutilizables.
+3. El proyecto se desplegó en Vercel, tanto el frontend como la API REST, lo que facilita el proceso de CI/CD y mantiene ambos servicios actualizados de forma automática.
+4. Se desarrolló un módulo (/src/lib/api.ts) encargado de centralizar las funciones listar() y crear(), junto con la gestión de headers, la URL base y el tratamiento de errores.
+
 
 
 
