@@ -1,0 +1,3 @@
+src/pruebas/**
+vitest.config.ts
+vitest.setup.ts
