@@ -4,7 +4,7 @@ Este proyecto corresponde a una aplicación de tareas realizada en **Next.js**, 
 
 ---
 
-## Descripción de la App
+## Descripción General
 
 La aplicación permite **crear y listar tareas** a través de una interfaz de usuario construida con **Next.js 15**, **TypeScript**, y **React**.  
 Las tareas se almacenan en una base de datos PostgreSQL accesible mediante una **API REST**, también desplegada en Vercel.
@@ -74,9 +74,9 @@ node -v
 rm -rf node_modules package-lock.json
 npm i
 npm run test
-
-
-
+``` 
+## Decisiones técnicas
+1. 
 
 
 
