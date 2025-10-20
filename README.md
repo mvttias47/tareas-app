@@ -1,40 +1,86 @@
-<<<<<<< HEAD
-# tareas-app
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Tareas App – Frontend (Next.js + TypeScript)
 
-## Getting Started
+Este proyecto corresponde a una aplicación de tareas realizada en **Next.js**, que implementa el frontend de la app conectada a una API REST externa.
 
-First, run the development server:
+---
+
+## Descripción de la App
+
+La aplicación permite **crear y listar tareas** a través de una interfaz de usuario construida con **Next.js 15**, **TypeScript**, y **React**.  
+Las tareas se almacenan en una base de datos PostgreSQL accesible mediante una **API REST**, también desplegada en Vercel.
+
+
+
+
+---
+
+## Tecnologías Utilizadas
+
+- **Next.js 15** – Framework React para aplicaciones fullstack.  
+- **TypeScript** – Tipado estático y detección temprana de errores.  
+- **React 19** – Librería base para la interfaz de usuario.  
+- **Prisma ORM** – Mapeo objeto-relacional usado en la API (backend).  
+- **Vitest** – Framework para pruebas unitarias rápidas.  
+- **TailwindCSS** – Librería CSS para un diseño visual limpio y adaptable.  
+- **Vercel** – Plataforma de despliegue en la nube.
+
+---
+
+
+## Instrucciones de Instalación y Ejecución Local
+
+Estos pasos son para ejecutar la aplicación en el entorno local.
+
+### Clonar el repositorio
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/mvttias47/tareas-app.git
+cd tareas-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalar dependencias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
+## Configurar variables de entorno
+```bash
+# Crea un archivo .env.local en la raíz del proyecto y define la URL base de la API:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+NEXT_PUBLIC_API_URL=https://tareas-api-rho.vercel.app
+```
 
-## Learn More
+## Ejecutar
+```bash
+npm run dev
+```
+## build de producción
+```bash
+npm run build
+npm start
+```
+## Luego abre en tu navegador en
+```bash
+http://localhost:3000
+```
+### Pruebas (Vitest + RTL)
 
-To learn more about Next.js, take a look at the following resources:
+Requisitos:
+- Node 20+ 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+nvm use 20
+node -v
+rm -rf node_modules package-lock.json
+npm i
+npm run test
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> 35fb523 (Initial commit from Create Next App)
+
+
+
+
+
+
