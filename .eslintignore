@@ -1,3 +1,8 @@
+node_modules
+.next
 src/pruebas/**
+**/*.test.*
+**/*.spec.*
 vitest.config.ts
 vitest.setup.ts
+
