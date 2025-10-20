@@ -1,0 +1,4 @@
+# No subas pruebas al build de Vercel
+src/pruebas
+**/*.test.*
+**/*.spec.*

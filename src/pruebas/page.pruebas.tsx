@@ -2,7 +2,7 @@ import React from 'react';
 
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Home from '@/app/page';
+import Home from '../app/page';
 
 
 const mockFetch = vi.fn() as unknown as typeof fetch;
